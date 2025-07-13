@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://gocrldq4i1bl"]
 
 [ext_resource type="Theme" uid="uid://d4dmxjv5l13r7" path="res://addons/complete_settings/scenes/settings/example_theme.tres" id="1_urext"]
-[ext_resource type="Script" path="res://addons/complete_settings/scenes/settings/example.gd" id="2_dyjjv"]
+[ext_resource type="Script" uid="uid://b48cvsri1jqec" path="res://addons/complete_settings/scenes/settings/example.gd" id="2_dyjjv"]
 [ext_resource type="PackedScene" uid="uid://c7d36yy26m5r4" path="res://addons/complete_settings/scenes/settings/validation_bar.tscn" id="2_ljsyw"]
 [ext_resource type="PackedScene" uid="uid://fpjnjbm2uirc" path="res://addons/complete_settings/scenes/categories/sound/sound_category.tscn" id="3_slarg"]
 [ext_resource type="PackedScene" uid="uid://bkl0ujm52n4hr" path="res://addons/complete_settings/scenes/categories/video/video_category.tscn" id="4_533ht"]

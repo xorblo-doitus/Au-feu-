@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c61ptdspoaehv"]
 
-[ext_resource type="Script" path="res://src/development/debugging/error_popup.gd" id="1_fy4eu"]
+[ext_resource type="Script" uid="uid://bqh11hi71nt7l" path="res://src/development/debugging/error_popup.gd" id="1_fy4eu"]
 [ext_resource type="Texture2D" uid="uid://dvst3otcyqgyr" path="res://src/assets/images/icons/popup/error.svg" id="2_dt3ol"]
 
 [node name="ErrorPopup" type="AcceptDialog" groups=["window"]]

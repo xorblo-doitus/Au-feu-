@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dmayp4du8pkmc"]
 
-[ext_resource type="Script" path="res://addons/complete_settings/scenes/categories/category.gd" id="1_xck30"]
-[ext_resource type="Script" path="res://addons/complete_settings/scenes/categories/v_box_container_with_lines.gd" id="2_nxlv7"]
+[ext_resource type="Script" uid="uid://dd76vfmn20bd8" path="res://addons/complete_settings/scenes/categories/category.gd" id="1_xck30"]
+[ext_resource type="Script" uid="uid://ckh3mfurmjaor" path="res://addons/complete_settings/scenes/categories/v_box_container_with_lines.gd" id="2_nxlv7"]
 
 [node name="TemplateCategory" type="Container" node_paths=PackedStringArray("setting_list", "collapse_all_button", "expand_all_button", "search_bar")]
 anchors_preset = 15
