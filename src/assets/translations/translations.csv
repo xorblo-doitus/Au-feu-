@@ -1,0 +1,4 @@
+keys,en,fr
+ERROR_PREFIX,[ERROR],[ERREUR]
+ERROR_STRING,Error code n°{godot_builtin_error} ({error_as_text}),Code d'erreur n°{godot_builtin_error} ({error_as_text})
+ERROR_WITHOUT_DESCRIPTION,Error without description,Erreur sans description

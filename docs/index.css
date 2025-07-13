@@ -1,0 +1,110 @@
+html, body {
+	margin: 0;
+	font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+}
+
+
+#bg-image {
+	background-image: url("./about/thumbnail.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	filter: blur(200px);
+	-webkit-filter: blur(200px);
+	
+	position: absolute;
+	inset: 0;
+	
+	z-index: -1;
+}
+
+
+#thumbnail {
+	object-fit: contain;
+	width: 100%;
+    height: 100%;
+	max-height: 50vh;
+}
+
+
+#topbar {
+	--icon-size: 2.5em;
+	--padding: 0.5em;
+	background-color: white;
+	position: sticky;
+	top: calc(-1 * (var(--icon-size) + var(--padding))); /* This must be the size of the icon */
+	
+	display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.topbar-entry {
+	display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+	gap: var(--padding);
+}
+
+.topbar-entry .material-symbols-rounded {
+	font-size: var(--icon-size);
+}
+
+.button {
+	color: black;
+	padding: var(--padding);
+	text-decoration: none;
+	text-underline-offset: 0px;
+}
+
+a:hover .button-text {
+	text-decoration: underline;
+	text-underline-offset: 0.2em;
+	transition: text-underline-offset 0.2s cubic-bezier(1, 2.65, 0, 0.5);
+}
+
+
+main {
+	max-width: 100ch;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: lightgray;
+	padding: 3ch;
+}
+
+
+#release-link {
+	align-self: center;
+	background-color: var(--play-color);
+	color: white;
+	padding: 1ch;
+	border-radius: 1ch;
+}
+
+
+#release-link .material-symbols-rounded {
+	font-size: 4rem;
+	vertical-align:middle;
+}
+#release-link .button-text {
+	font-size: 2rem;
+	vertical-align:middle;
+}
+
+
+.pictured-paragraph, .two-part-auto-wrap {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	align-content: center;
+}
+	
+p {
+	max-width: 60ch;
+}

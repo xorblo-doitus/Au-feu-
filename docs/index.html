@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20,400,1,0&text=homeplay_rwdwn"/>
+	<link rel="stylesheet" href="index.css" type="text/css"/>
+	<link id="-gd-engine-icon" rel="icon" type="image/png" href="./play/stable/index.icon.png"/>
+	<link rel="apple-touch-icon" href="./play/stable/index.apple-touch-icon.png"/>
+	<script>
+		window.onload = function() {
+			const url = location.hostname != "localhost"?location:new URL("https://xorblo-doitus.github.io/Godot-Project-Template/something")
+			const hostname = url.hostname
+			if (hostname.endsWith(".github.io")) {
+				document.getElementById("release-link").href = `https://github.com/${hostname.slice(0, -10)}/${url.pathname.split("/")[1]}/releases/latest/`
+			} else {
+				document.getElementById("release-link").remove()
+			}
+		}
+	</script>
+	<style>
+		body {
+			--play-color: #008200;
+		}
+	</style>
+</head>
+<body>
+	<div id="bg-image"></div>
+	
+	<div id="topbar">
+		<div style="flex-grow: 1;"></div>
+		
+		<a class="button" href="/projects/?excluded-tags=tool&sortBy=fun&sortRevert">
+			<div class="topbar-entry">
+				<span class="material-symbols-rounded">
+					home
+				</span>
+				<span class="button-text">More games</span>
+			</div>
+		</a>
+		
+		<div style="flex-grow: 1;"></div>
+		
+		<a class="button" href="./play/stable">
+			<div class="topbar-entry" style="color: var(--play-color);">
+				<span class="material-symbols-rounded">
+					play_arrow
+				</span>
+				<span class="button-text">Play in browser</span>
+			</div>
+		</a>
+		
+		<div style="flex-grow: 1;"></div>
+	</div>
+
+	<main>
+		<img id="thumbnail" src="./about/thumbnail.png" alt="Thumbnail"/>
+		
+		<!-- TODOTEMPLATE update name -->
+		<div class="two-part-auto-wrap">
+			<h1>Project's name</h1>
+			<a class="button" id="release-link">
+				<!-- <div class="topbar-entry"> -->
+					<span class="material-symbols-rounded">
+						download
+					</span>
+					<span class="button-text">Download</span>
+				<!-- </div> -->
+			</a>
+		</div>
+		
+		<!-- TODOTEMPLATE update description -->
+		
+		<div class="pictured-paragraph">
+			<p>
+				This project is...
+				Bla bla...
+				Image related to the right...
+				Lorem Ipsum...
+			</p>
+			<img src="./about/thumbnail.png" alt="A screenshot">
+		</div>
+	</main>
+</body>
+</html>

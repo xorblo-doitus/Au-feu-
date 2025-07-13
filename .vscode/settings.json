@@ -1,0 +1,7 @@
+{
+	"liveServer.settings.root": "/docs/",
+	"explorer.fileNesting.enabled": true,
+	"explorer.fileNesting.patterns": {
+		"*": "$(capture).import, $(capture).uid"
+	}
+}
