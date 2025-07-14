@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://kh847nul4xfo"]
+
+[ext_resource type="Script" uid="uid://bdiavkru8su1f" path="res://src/world/burnable/wheat/wheat.gd" id="1_kxrqx"]
+[ext_resource type="Texture2D" uid="uid://cuvj1ki3xw58i" path="res://src/world/burnable/wheat/wheat.svg" id="1_ofuxu"]
+
+[node name="Wheat" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_kxrqx")
+
+[node name="Wheat" type="Sprite2D" parent="."]
+modulate = Color(0.943532, 0.999564, 0.968438, 1)
+position = Vector2(0, -64)
+texture = ExtResource("1_ofuxu")

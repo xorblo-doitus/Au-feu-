@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="64"
+   height="128"
+   viewBox="0 0 16.933333 33.866667"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   sodipodi:docname="wheat.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="false"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="true"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     borderlayer="true"
+     labelstyle="default"
+     inkscape:clip-to-page="false"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="-70.357125"
+     inkscape:cy="10.606602"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="opacity:0.976699;fill:#ffc130;fill-opacity:1;stroke-width:3.175;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:100;paint-order:stroke markers fill"
+       id="rect1"
+       width="4.0295153"
+       height="18.248161"
+       x="6.4519091"
+       y="15.614461" />
+    <path
+       id="path1"
+       style="opacity:0.976699;fill:#ffc130;stroke-width:3.175;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:100;paint-order:stroke markers fill"
+       d="m 12.402343,9.7565107 c 0,0.6477733 -3.9356763,5.8579503 -0.07529,1.8790003 3.086218,-3.1810029 -1.976615,7.548394 -3.8603898,7.87751 C 4.3147087,20.238413 2.1279584,4.8992145 4.5309892,9.7565107 7.0236662,14.795011 5.7444912,11.912833 4.579714,7.7727896 4.1534936,6.2578468 4.7717861,4.6356943 4.9223451,5.5099525 5.5946216,9.4136937 5.8920511,6.0182531 6.2081347,1.7653758 6.3032304,0.48587177 7.6262862,5.2933587e-8 8.4666662,0 c 0.8964967,-5.6468248e-8 2.3107458,0.58079918 2.3847078,1.9943117 0.275267,5.2607027 0.566467,7.0236899 0.908277,2.4169266 0.117512,-1.5837855 0.642692,3.3718517 0.642692,5.3452724 z"
+       sodipodi:nodetypes="sssssssssss" />
+  </g>
+  <metadata
+     id="metadata1">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Patou (aka xorblo-doitus)</dc:title>
+          </cc:Agent>
+        </dc:creator>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>
