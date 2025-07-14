@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bq234bgh8r4cs" path="res://src/world/burnable/spawn_area.gd" id="1_018ao"]
 
 [sub_resource type="Curve2D" id="Curve2D_feo6i"]
+resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 20, -85, 0, 0, 0, 0, 143, -20, 0, 0, 0, 0, 176, 142, 0, 0, 0, 0, 112, 298, 0, 0, 0, 0, -228, 344, 0, 0, 0, 0, -497, -48, 0, 0, 0, 0, -284, -202)
 }
@@ -12,4 +13,3 @@ point_count = 7
 y_sort_enabled = true
 curve = SubResource("Curve2D_feo6i")
 script = ExtResource("1_018ao")
-seed = null
