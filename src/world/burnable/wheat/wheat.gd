@@ -3,12 +3,15 @@ extends Node2D
 
 
 func _ready() -> void:
-	print(owner)
-	if Engine.is_editor_hint() and owner != null:
-		var rand:= RandomNumberGenerator.new()
-		rand.seed = name.hash()
-		modulate = Color(
-			1.0 - rand.randf() /10,
-			1.0 - rand.randf() /10,
-			1.0 - rand.randf() /10,
-		)
+	if Engine.is_editor_hint() and get_parent().owner != null:
+		randomize_color()
+
+
+func randomize_color() -> void:
+	var rand:= RandomNumberGenerator.new()
+	rand.seed = name.hash()
+	modulate = Color(
+		1.0 - rand.randf() / 8,
+		1.0 - rand.randf() / 8,
+		1.0 - rand.randf() / 8,
+	)

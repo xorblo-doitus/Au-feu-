@@ -1,14 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://ciceafugib0p4"]
+[gd_scene load_steps=5 format=3 uid="uid://ciceafugib0p4"]
 
 [ext_resource type="Script" uid="uid://rvw58vx6nx4d" path="res://src/world/world.gd" id="1_nomqr"]
 [ext_resource type="PackedScene" uid="uid://6hljg85byo5w" path="res://src/world/fire.tscn" id="2_6fy3g"]
 [ext_resource type="PackedScene" uid="uid://kh847nul4xfo" path="res://src/world/burnable/wheat/wheat.tscn" id="3_jte2u"]
+[ext_resource type="PackedScene" uid="uid://dfstqpw7jw6mc" path="res://src/world/burnable/spawn_area.tscn" id="4_bsf3i"]
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_nomqr")
 
 [node name="Fire" parent="." instance=ExtResource("2_6fy3g")]
+visible = false
 
 [node name="Wheat" parent="." instance=ExtResource("3_jte2u")]
 modulate = Color(0.943532, 0.999564, 0.968438, 1)
@@ -21,3 +23,9 @@ position = Vector2(207, 13)
 [node name="Wheat3" parent="." instance=ExtResource("3_jte2u")]
 modulate = Color(0.966423, 0.963671, 0.904077, 1)
 position = Vector2(207, 13)
+
+[node name="SpawnArea" parent="." instance=ExtResource("4_bsf3i")]
+position = Vector2(758, 356)
+seed = 1741
+object_approx_radius = 50.0
+packed_scene = ExtResource("3_jte2u")
