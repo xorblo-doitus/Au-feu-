@@ -34,6 +34,5 @@ position = Vector2(207, 13)
 [node name="SpawnArea" parent="." instance=ExtResource("4_bsf3i")]
 position = Vector2(758, 356)
 curve = SubResource("Curve2D_bsf3i")
-seed = 1741
 object_approx_radius = 50.0
 packed_scene = ExtResource("3_jte2u")

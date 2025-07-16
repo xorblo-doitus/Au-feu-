@@ -2,9 +2,9 @@
 extends Path2D
 
 
-@export_range(0, 2**31) var seed: int = 0:
+@export_range(1, 2**31) var gen_seed: int = 1234:
 	set(new):
-		seed = new
+		gen_seed = new
 		generate()
 @export_range(0.01, 100) var object_approx_radius: float = 100:
 	set(new):
@@ -17,14 +17,23 @@ extends Path2D
 @export var spawn_cap: int = 1000
 
 
+var _random_generator: RandomNumberGenerator
+
+
 func generate() -> void:
+	if not is_node_ready():
+		return
+	
 	for child in get_children():
 		child.queue_free()
 	
 	if packed_scene == null:
 		return
 	
-	print("Regenerating")
+	print("Regenerating ", self, "...")
+	_random_generator = RandomNumberGenerator.new()
+	_random_generator.seed = gen_seed
+	
 	var points: PackedVector2Array = PackedVector2Array()
 	for i in curve.point_count:
 		points.push_back(curve.get_point_position(i))
@@ -47,11 +56,11 @@ func generate() -> void:
 				push_warning("Spawn cap reached on", self)
 				return
 	
-	print("Regenerated")
+	print("Regenerated ", self)
 
 
 func random_triangle_point(a: Vector2, b: Vector2, c: Vector2) -> Vector2:
-	return a + sqrt(randf()) * (-a + b + randf() * (c - b))
+	return a + sqrt(_random_generator.randf()) * (-a + b + _random_generator.randf() * (c - b))
 	
 func triangle_area(a: Vector2, b: Vector2, c: Vector2) -> float:
 	# shoelace formula
