@@ -149,6 +149,10 @@ bbcode_edit/editor/open_current_file_documentation={
 
 locale/translations=PackedStringArray("res://src/assets/translations/translations.en.translation", "res://src/assets/translations/translations.fr.translation", "res://addons/keybind_remap/translations/keybind_remap.en.translation", "res://addons/keybind_remap/translations/keybind_remap.fr.translation", "res://addons/complete_settings/translations/complete_settings.en.translation", "res://addons/complete_settings/translations/complete_settings.fr.translation")
 
+[layer_names]
+
+2d_physics/layer_5="Burnable"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

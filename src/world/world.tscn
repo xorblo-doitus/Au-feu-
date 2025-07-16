@@ -27,12 +27,18 @@ position = Vector2(193, 42)
 modulate = Color(0.956433, 0.945293, 0.902741, 1)
 position = Vector2(207, 13)
 
-[node name="Wheat3" parent="." instance=ExtResource("3_jte2u")]
+[node name="BurningWheat" parent="." instance=ExtResource("3_jte2u")]
 modulate = Color(0.966423, 0.963671, 0.904077, 1)
-position = Vector2(207, 13)
+position = Vector2(278, 348)
+
+[node name="BurnableArea" parent="BurningWheat" index="1"]
+lit = true
 
 [node name="SpawnArea" parent="." instance=ExtResource("4_bsf3i")]
 position = Vector2(758, 356)
 curve = SubResource("Curve2D_bsf3i")
+gen_seed = 1234
 object_approx_radius = 50.0
 packed_scene = ExtResource("3_jte2u")
+
+[editable path="BurningWheat"]

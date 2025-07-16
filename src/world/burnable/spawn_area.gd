@@ -20,6 +20,10 @@ extends Path2D
 var _random_generator: RandomNumberGenerator
 
 
+func _ready() -> void:
+	generate()
+
+
 func generate() -> void:
 	if not is_node_ready():
 		return

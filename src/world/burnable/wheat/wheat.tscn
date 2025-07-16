@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://kh847nul4xfo"]
+[gd_scene load_steps=6 format=3 uid="uid://kh847nul4xfo"]
 
 [ext_resource type="Script" uid="uid://bdiavkru8su1f" path="res://src/world/burnable/wheat/wheat.gd" id="1_kxrqx"]
 [ext_resource type="Texture2D" uid="uid://cuvj1ki3xw58i" path="res://src/world/burnable/wheat/wheat.svg" id="1_ofuxu"]
+[ext_resource type="PackedScene" uid="uid://b30ywapabdsvm" path="res://src/world/burnable/burnable_area.tscn" id="3_i3d0d"]
+[ext_resource type="PackedScene" uid="uid://6hljg85byo5w" path="res://src/world/fire.tscn" id="4_cduam"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cduam"]
+radius = 48.0
 
 [node name="Wheat" type="Node2D"]
 y_sort_enabled = true
@@ -11,3 +16,12 @@ script = ExtResource("1_kxrqx")
 modulate = Color(0.943532, 0.999564, 0.968438, 1)
 position = Vector2(0, -64)
 texture = ExtResource("1_ofuxu")
+
+[node name="BurnableArea" parent="." instance=ExtResource("3_i3d0d")]
+
+[node name="Fire" parent="BurnableArea" instance=ExtResource("4_cduam")]
+visible = false
+position = Vector2(0, -19)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BurnableArea"]
+shape = SubResource("CircleShape2D_cduam")
