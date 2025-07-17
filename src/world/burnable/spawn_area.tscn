@@ -13,4 +13,3 @@ point_count = 7
 y_sort_enabled = true
 curve = SubResource("Curve2D_feo6i")
 script = ExtResource("1_018ao")
-gen_seed = null
