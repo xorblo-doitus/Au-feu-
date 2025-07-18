@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://bxnlkrxvojqqa"]
+
+[ext_resource type="PackedScene" uid="uid://ciceafugib0p4" path="res://src/world/world.tscn" id="1_iwwwy"]
+[ext_resource type="PackedScene" uid="uid://dfstqpw7jw6mc" path="res://src/world/burnable/spawn_area.tscn" id="2_q5tcb"]
+[ext_resource type="PackedScene" uid="uid://kh847nul4xfo" path="res://src/world/burnable/wheat/wheat.tscn" id="3_w77cd"]
+[ext_resource type="PackedScene" uid="uid://mkb8u73fcue3" path="res://src/world/extinguishers/cloud.tscn" id="4_1cmqp"]
+
+[sub_resource type="Curve2D" id="Curve2D_w77cd"]
+resource_local_to_scene = true
+bake_interval = 512.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -309, -5, 0, 0, 0, 0, -163, -180, 0, 0, 0, 0, 265, -108, 0, 0, 0, 0, 642, -172, 0, 0, 0, 0, 770, 74, 0, 0, 0, 0, 635, 413, 0, 0, 0, 0, 118, 399, 0, 0, 0, 0, -311, 282)
+}
+point_count = 8
+
+[node name="World1" instance=ExtResource("1_iwwwy")]
+
+[node name="SpawnArea" parent="." index="0" instance=ExtResource("2_q5tcb")]
+position = Vector2(472, 289)
+curve = SubResource("Curve2D_w77cd")
+object_approx_radius = 70.0
+packed_scene = ExtResource("3_w77cd")
+
+[node name="Wheat" parent="." index="1" groups=["start_lit"] instance=ExtResource("3_w77cd")]
+position = Vector2(225, 323)
+
+[node name="Cloud" parent="." index="2" instance=ExtResource("4_1cmqp")]
+position = Vector2(520, 160)
+
+[node name="Cloud2" parent="." index="3" instance=ExtResource("4_1cmqp")]
+position = Vector2(109, 671)
