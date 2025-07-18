@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://mkb8u73fcue3"]
+
+[ext_resource type="PackedScene" uid="uid://c52w6y1roj02m" path="res://src/world/extinguishers/extinguisher_area.tscn" id="1_g645f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g645f"]
+radius = 64.0
+
+[node name="Cloud" type="Node2D"]
+
+[node name="ExtinguisherArea" parent="." instance=ExtResource("1_g645f")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExtinguisherArea"]
+shape = SubResource("CircleShape2D_g645f")

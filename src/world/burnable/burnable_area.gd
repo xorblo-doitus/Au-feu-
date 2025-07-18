@@ -22,7 +22,12 @@ var _life_tween: Tween
 
 
 func sparkle() -> void:
-	for area: BurnableArea in get_overlapping_areas():
+	var overlapping_areas := get_overlapping_areas()
+	for area in overlapping_areas:
+		if area is ExtinguisherArea:
+			return
+	
+	for area: BurnableArea in overlapping_areas:
 		area.catch_fire()
 
 

@@ -1,0 +1,2 @@
+class_name ExtinguisherArea
+extends Area2D
