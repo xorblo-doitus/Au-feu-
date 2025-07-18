@@ -1,13 +1,38 @@
-[gd_scene load_steps=3 format=3 uid="uid://mkb8u73fcue3"]
+[gd_scene load_steps=5 format=3 uid="uid://mkb8u73fcue3"]
 
 [ext_resource type="PackedScene" uid="uid://c52w6y1roj02m" path="res://src/world/extinguishers/extinguisher_area.tscn" id="1_g645f"]
+[ext_resource type="Texture2D" uid="uid://cy7nfwsea5htd" path="res://src/assets/images/sprites/shadow.png" id="1_ih2bs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g645f"]
 radius = 64.0
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_g645f"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, -1400, 0)
+emission_shape = 1
+emission_sphere_radius = 64.0
+direction = Vector3(0, 1, 0)
+spread = 2.0
+initial_velocity_min = 2000.0
+initial_velocity_max = 2000.0
+gravity = Vector3(0, 0, 0)
+scale_min = 10.0
+scale_max = 10.0
+color = Color(0, 0.52549, 1, 1)
+
 [node name="Cloud" type="Node2D"]
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.27451)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ih2bs")
 
 [node name="ExtinguisherArea" parent="." instance=ExtResource("1_g645f")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExtinguisherArea"]
 shape = SubResource("CircleShape2D_g645f")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 16
+lifetime = 0.69
+process_material = SubResource("ParticleProcessMaterial_g645f")
