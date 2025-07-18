@@ -25,6 +25,7 @@ func sparkle() -> void:
 	var overlapping_areas := get_overlapping_areas()
 	for area in overlapping_areas:
 		if area is ExtinguisherArea:
+			lit = false
 			return
 	
 	for area: BurnableArea in overlapping_areas:
@@ -67,8 +68,8 @@ func set_lit(new: bool) -> void:
 			life_timer.paused = false
 		_life_tween.play()
 	else:
+		sparkle_timer.stop()
 		if not (_life_timer_started and _life_tween == null):
-			sparkle_timer.stop()
 			if _life_timer_started:
 				life_timer.paused = true
 				_life_tween.pause()
