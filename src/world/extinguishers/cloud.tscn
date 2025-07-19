@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://mkb8u73fcue3"]
+[gd_scene load_steps=6 format=3 uid="uid://mkb8u73fcue3"]
 
+[ext_resource type="PackedScene" uid="uid://bk201o6k63ae4" path="res://src/world/draggable_component.tscn" id="1_8mm3n"]
 [ext_resource type="PackedScene" uid="uid://c52w6y1roj02m" path="res://src/world/extinguishers/extinguisher_area.tscn" id="1_g645f"]
 [ext_resource type="Texture2D" uid="uid://cy7nfwsea5htd" path="res://src/assets/images/sprites/shadow.png" id="1_ih2bs"]
 
@@ -21,6 +22,12 @@ scale_max = 10.0
 color = Color(0, 0.52549, 1, 1)
 
 [node name="Cloud" type="Node2D"]
+
+[node name="DraggableComponent" parent="." instance=ExtResource("1_8mm3n")]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DraggableComponent"]
+shape = SubResource("CircleShape2D_g645f")
 
 [node name="Shadow" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.27451)

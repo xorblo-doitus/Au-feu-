@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bk201o6k63ae4"]
+
+[ext_resource type="Script" uid="uid://0688w3b53jne" path="res://src/world/draggable_component.gd" id="1_iytgl"]
+
+[node name="DraggableComponent" type="Area2D"]
+script = ExtResource("1_iytgl")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

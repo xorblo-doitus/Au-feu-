@@ -23,6 +23,7 @@ packed_scene = ExtResource("3_w77cd")
 
 [node name="Wheat" parent="." index="1" groups=["start_lit"] instance=ExtResource("3_w77cd")]
 position = Vector2(225, 323)
+base_color = Color(0.999456, 0.960547, 0.934872, 1)
 
 [node name="Cloud" parent="." index="2" instance=ExtResource("4_1cmqp")]
 position = Vector2(520, 160)

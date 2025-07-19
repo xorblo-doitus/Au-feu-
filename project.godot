@@ -131,6 +131,7 @@ locale/translations=PackedStringArray("res://src/assets/translations/translation
 
 [layer_names]
 
+2d_physics/layer_1="Input"
 2d_physics/layer_5="Burnable"
 2d_physics/layer_6="Extinguishers"
 
