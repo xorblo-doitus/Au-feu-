@@ -4,19 +4,23 @@ extends Node2D
 
 @export var next_level: PackedScene
 @onready var life: ProgressBar = $UI/Buttons/Life
+@export var win_life: float = 80
 
 var _started: bool = false
 
+@onready var win_life_progress: ProgressBar = $UI/Buttons/Life/WinLife
 
 
 func _ready() -> void:
 	SignalBus.lit_count_changed.connect(_on_lit_count_changed)
 	calculate_life()
+	win_life_progress.value = win_life
 
 
 func _on_lit_count_changed(new: int) -> void:
 	if _started and new == 0:
-		get_tree().change_scene_to_packed(next_level)
+		if win_life_progress.value <= life.value:
+			get_tree().change_scene_to_packed(next_level)
 	calculate_life()
 
 
@@ -39,6 +43,7 @@ func reset() -> void:
 	
 	for burnable: BurnableArea in get_tree().get_nodes_in_group("burnable"):
 		burnable.reset()
+	calculate_life()
 
 
 func calculate_life() -> void:

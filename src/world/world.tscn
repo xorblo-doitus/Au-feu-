@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ciceafugib0p4"]
+[gd_scene load_steps=11 format=3 uid="uid://ciceafugib0p4"]
 
 [ext_resource type="Script" uid="uid://rvw58vx6nx4d" path="res://src/world/world.gd" id="1_nomqr"]
 [ext_resource type="Texture2D" uid="uid://2t5ft0jpmhcp" path="res://src/world/dirt.png" id="2_6fy3g"]
@@ -28,6 +28,15 @@ corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bsf3i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l0av5"]
+draw_center = false
+border_width_right = 8
+border_color = Color(1, 0, 0, 1)
+expand_margin_top = 16.0
+expand_margin_bottom = 16.0
 
 [sub_resource type="InputEventKey" id="InputEventKey_6fy3g"]
 device = -1
@@ -83,6 +92,19 @@ theme_override_font_sizes/font_size = 34
 theme_override_styles/background = SubResource("StyleBoxFlat_bsf3i")
 theme_override_styles/fill = SubResource("StyleBoxFlat_43c6p")
 value = 50.0
+
+[node name="WinLife" type="ProgressBar" parent="UI/Buttons/Life"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+offset_right = 500.0
+offset_bottom = 64.0
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 34
+theme_override_styles/background = SubResource("StyleBoxEmpty_bsf3i")
+theme_override_styles/fill = SubResource("StyleBoxFlat_l0av5")
+value = 80.0
+show_percentage = false
 
 [node name="Reset" type="TextureButton" parent="UI/Buttons"]
 layout_mode = 2
