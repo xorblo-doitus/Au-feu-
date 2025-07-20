@@ -1,7 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://ciceafugib0p4"]
+[gd_scene load_steps=3 format=3 uid="uid://ciceafugib0p4"]
 
 [ext_resource type="Script" uid="uid://rvw58vx6nx4d" path="res://src/world/world.gd" id="1_nomqr"]
+[ext_resource type="Texture2D" uid="uid://2t5ft0jpmhcp" path="res://src/world/dirt.png" id="2_6fy3g"]
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_nomqr")
+
+[node name="Dirt" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_6fy3g")
+stretch_mode = 1
