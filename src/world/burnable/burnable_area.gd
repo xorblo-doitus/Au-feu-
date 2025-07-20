@@ -10,6 +10,18 @@ extends Area2D
 
 #@export_range() var max_health: int = 10
 
+var burn_progress: float:
+	set(new):
+		if "burn_progress" in get_parent():
+			get_parent().burn_progress = new
+		else:
+			burn_progress = new
+	get:
+		if "burn_progress" in get_parent():
+			return get_parent().burn_progress
+		return burn_progress
+
+
 @onready var sparkle_timer: Timer = $SparkleTimer
 @onready var life_timer: Timer = $LifeTimer
 var _life_timer_started: bool = false
@@ -68,7 +80,7 @@ func set_lit(new: bool) -> void:
 			life_timer.start(life_time)
 			_life_tween = create_tween()
 			_life_tween.tween_property(
-				get_parent(),
+				self,
 				^"burn_progress",
 				1.0,
 				life_timer.time_left
