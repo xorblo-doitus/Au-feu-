@@ -83,6 +83,7 @@ theme_override_constants/separation = 64
 
 [node name="Start" type="TextureButton" parent="UI/Buttons"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_bsf3i")
 
 [node name="Life" type="ProgressBar" parent="UI/Buttons"]
@@ -110,6 +111,7 @@ show_percentage = false
 
 [node name="Reset" type="TextureButton" parent="UI/Buttons"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 shortcut = SubResource("Shortcut_jte2u")
 texture_normal = ExtResource("4_43c6p")
 
