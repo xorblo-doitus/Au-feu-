@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bxnlkrxvojqqa"]
+[gd_scene load_steps=7 format=3 uid="uid://bxnlkrxvojqqa"]
 
 [ext_resource type="PackedScene" uid="uid://ciceafugib0p4" path="res://src/world/world.tscn" id="1_iwwwy"]
 [ext_resource type="PackedScene" uid="uid://dfstqpw7jw6mc" path="res://src/world/burnable/spawn_area.tscn" id="2_q5tcb"]
 [ext_resource type="PackedScene" uid="uid://kh847nul4xfo" path="res://src/world/burnable/wheat/wheat.tscn" id="3_w77cd"]
 [ext_resource type="PackedScene" uid="uid://mkb8u73fcue3" path="res://src/world/extinguishers/cloud.tscn" id="4_1cmqp"]
+[ext_resource type="PackedScene" uid="uid://6hljg85byo5w" path="res://src/world/fire.tscn" id="5_f2wq6"]
 
 [sub_resource type="Curve2D" id="Curve2D_w77cd"]
 resource_local_to_scene = true
@@ -23,10 +24,12 @@ packed_scene = ExtResource("3_w77cd")
 
 [node name="Wheat" parent="." index="1" groups=["start_lit"] instance=ExtResource("3_w77cd")]
 position = Vector2(225, 323)
-base_color = Color(0.999456, 0.960547, 0.934872, 1)
 
 [node name="Cloud" parent="." index="2" instance=ExtResource("4_1cmqp")]
 position = Vector2(520, 160)
 
 [node name="Cloud2" parent="." index="3" instance=ExtResource("4_1cmqp")]
 position = Vector2(109, 671)
+
+[node name="FireCache" parent="." index="4" instance=ExtResource("5_f2wq6")]
+position = Vector2(-229, 233)
