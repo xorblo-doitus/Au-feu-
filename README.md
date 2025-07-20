@@ -1,6 +1,6 @@
 # Au feu !
 
-A small proptotype for Godot Wild Jam #83.
+A small prototype for Godot Wild Jam #83.
 
 
 # Status
