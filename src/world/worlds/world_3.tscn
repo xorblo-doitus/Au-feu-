@@ -1,0 +1,102 @@
+[gd_scene load_steps=9 format=3 uid="uid://cdduwkqnagl7"]
+
+[ext_resource type="PackedScene" uid="uid://ciceafugib0p4" path="res://src/world/world.tscn" id="1_n015m"]
+[ext_resource type="PackedScene" uid="uid://dnlhchq6yhs6m" path="res://src/world/worlds/thanks.tscn" id="2_ugejn"]
+[ext_resource type="PackedScene" uid="uid://dfstqpw7jw6mc" path="res://src/world/burnable/spawn_area.tscn" id="3_fqo60"]
+[ext_resource type="PackedScene" uid="uid://kh847nul4xfo" path="res://src/world/burnable/wheat/wheat.tscn" id="4_168sg"]
+[ext_resource type="PackedScene" uid="uid://mkb8u73fcue3" path="res://src/world/extinguishers/cloud.tscn" id="5_ducdu"]
+[ext_resource type="PackedScene" uid="uid://6hljg85byo5w" path="res://src/world/fire.tscn" id="6_ketui"]
+
+[sub_resource type="Curve2D" id="Curve2D_w77cd"]
+resource_local_to_scene = true
+bake_interval = 512.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 143, -282, 0, 0, 0, 0, 642, -172, 0, 0, 0, 0, 1269, -55, 0, 0, 0, 0, 1245, 346, 0, 0, 0, 0, 1136, 648, 0, 0, 0, 0, 448, 719)
+}
+point_count = 6
+
+[sub_resource type="Curve2D" id="Curve2D_f2wq6"]
+resource_local_to_scene = true
+bake_interval = 512.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -336, -190, 0, 0, 0, 0, 68, -172, 0, 0, 0, 0, 347, 714, 0, 0, 0, 0, -374, 665, 0, 0, 0, 0, -269, -119)
+}
+point_count = 5
+
+[node name="World3" instance=ExtResource("1_n015m")]
+next_level = ExtResource("2_ugejn")
+win_life = 75.0
+
+[node name="SpawnArea" parent="." index="0" instance=ExtResource("3_fqo60")]
+position = Vector2(493, 343)
+curve = SubResource("Curve2D_w77cd")
+object_approx_radius = 60.0
+packed_scene = ExtResource("4_168sg")
+
+[node name="SpawnArea2" parent="." index="1" instance=ExtResource("3_fqo60")]
+position = Vector2(493, 343)
+curve = SubResource("Curve2D_f2wq6")
+gen_seed = 1239
+object_approx_radius = 60.0
+packed_scene = ExtResource("4_168sg")
+
+[node name="BurningWheat" parent="." index="2" groups=["start_lit"] instance=ExtResource("4_168sg")]
+position = Vector2(256, 410)
+base_color = Color(0.992625, 0.928336, 0.947752, 1)
+
+[node name="BurningWheat2" parent="." index="3" groups=["start_lit"] instance=ExtResource("4_168sg")]
+position = Vector2(255, 256)
+base_color = Color(0.946015, 0.996044, 0.994458, 1)
+
+[node name="BurningWheat3" parent="." index="4" groups=["start_lit"] instance=ExtResource("4_168sg")]
+position = Vector2(427, 124)
+base_color = Color(0.941633, 0.894997, 0.910339, 1)
+
+[node name="BurningWheat4" parent="." index="5" groups=["start_lit"] instance=ExtResource("4_168sg")]
+position = Vector2(272, 115)
+base_color = Color(0.919971, 0.922663, 0.914361, 1)
+
+[node name="BurningWheat5" parent="." index="6" groups=["start_lit"] instance=ExtResource("4_168sg")]
+position = Vector2(496, 141)
+base_color = Color(0.956677, 0.936925, 0.888302, 1)
+
+[node name="BurningWheat6" parent="." index="7" groups=["start_lit"] instance=ExtResource("4_168sg")]
+position = Vector2(444, 203)
+base_color = Color(0.924265, 0.926594, 0.877359, 1)
+
+[node name="BurningWheat7" parent="." index="8" groups=["start_lit"] instance=ExtResource("4_168sg")]
+position = Vector2(352, 109)
+base_color = Color(0.991605, 0.980496, 0.986283, 1)
+
+[node name="BurningWheat8" parent="." index="9" groups=["start_lit"] instance=ExtResource("4_168sg")]
+position = Vector2(478, 330)
+base_color = Color(0.909315, 0.925245, 0.948264, 1)
+
+[node name="BurningWheat9" parent="." index="10" groups=["start_lit"] instance=ExtResource("4_168sg")]
+position = Vector2(417, 393)
+base_color = Color(0.890446, 0.950171, 0.932341, 1)
+
+[node name="Cloud" parent="." index="11" instance=ExtResource("5_ducdu")]
+position = Vector2(515, 743)
+
+[node name="FireCache" parent="." index="12" instance=ExtResource("6_ketui")]
+position = Vector2(-208, 287)
+
+[node name="Wheat" parent="." index="14" instance=ExtResource("4_168sg")]
+position = Vector2(259, 466)
+
+[node name="Wheat2" parent="." index="15" instance=ExtResource("4_168sg")]
+position = Vector2(298, 521)
+base_color = Color(0.931616, 0.878426, 0.938609, 1)
+
+[node name="Wheat3" parent="." index="16" instance=ExtResource("4_168sg")]
+position = Vector2(561, 254)
+base_color = Color(0.954589, 0.880097, 0.912231, 1)
+
+[node name="Wheat4" parent="." index="17" instance=ExtResource("4_168sg")]
+position = Vector2(626, 234)
+base_color = Color(0.892564, 0.930452, 0.998232, 1)
+
+[node name="Wheat5" parent="." index="18" instance=ExtResource("4_168sg")]
+position = Vector2(667, 267)
+base_color = Color(0.888243, 0.975739, 0.952288, 1)

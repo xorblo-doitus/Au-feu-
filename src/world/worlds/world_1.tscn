@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bxnlkrxvojqqa"]
 
 [ext_resource type="PackedScene" uid="uid://ciceafugib0p4" path="res://src/world/world.tscn" id="1_iwwwy"]
-[ext_resource type="PackedScene" uid="uid://b2ddddit1thit" path="res://src/world/worlds/world_2.tscn" id="2_in87y"]
+[ext_resource type="PackedScene" uid="uid://b1sw3kblnnp34" path="res://src/world/worlds/world_1.5.tscn" id="2_in87y"]
 [ext_resource type="PackedScene" uid="uid://dfstqpw7jw6mc" path="res://src/world/burnable/spawn_area.tscn" id="2_q5tcb"]
 [ext_resource type="PackedScene" uid="uid://kh847nul4xfo" path="res://src/world/burnable/wheat/wheat.tscn" id="3_w77cd"]
 [ext_resource type="PackedScene" uid="uid://mkb8u73fcue3" path="res://src/world/extinguishers/cloud.tscn" id="4_1cmqp"]

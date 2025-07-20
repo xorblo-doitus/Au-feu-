@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://b2ddddit1thit"]
+[gd_scene load_steps=9 format=3 uid="uid://b2ddddit1thit"]
 
 [ext_resource type="PackedScene" uid="uid://ciceafugib0p4" path="res://src/world/world.tscn" id="1_hqip5"]
 [ext_resource type="PackedScene" uid="uid://dfstqpw7jw6mc" path="res://src/world/burnable/spawn_area.tscn" id="2_smikl"]
+[ext_resource type="PackedScene" uid="uid://cdduwkqnagl7" path="res://src/world/worlds/world_3.tscn" id="2_v3en0"]
 [ext_resource type="PackedScene" uid="uid://kh847nul4xfo" path="res://src/world/burnable/wheat/wheat.tscn" id="3_v3en0"]
 [ext_resource type="PackedScene" uid="uid://mkb8u73fcue3" path="res://src/world/extinguishers/cloud.tscn" id="4_ssk55"]
 [ext_resource type="PackedScene" uid="uid://6hljg85byo5w" path="res://src/world/fire.tscn" id="5_cayk4"]
@@ -23,6 +24,7 @@ _data = {
 point_count = 3
 
 [node name="World1" instance=ExtResource("1_hqip5")]
+next_level = ExtResource("2_v3en0")
 win_life = 55.0
 
 [node name="SpawnArea" parent="." index="0" instance=ExtResource("2_smikl")]

@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://bywveb38qugrt"]
+[gd_scene load_steps=10 format=3 uid="uid://bywveb38qugrt"]
 
 [ext_resource type="Texture2D" uid="uid://2t5ft0jpmhcp" path="res://src/world/dirt.png" id="1_1yg6l"]
 [ext_resource type="Script" uid="uid://crinwrujtvb6r" path="res://src/menu.gd" id="1_n5syy"]
 [ext_resource type="Texture2D" uid="uid://c6mpwiw03si7l" path="res://src/world/play.svg" id="2_n5syy"]
 [ext_resource type="PackedScene" uid="uid://bxnlkrxvojqqa" path="res://src/world/worlds/world_1.tscn" id="2_ts47l"]
+[ext_resource type="Texture2D" uid="uid://dbdl8lkppne8w" path="res://jam_assets/83-Consume.png" id="4_0cv6u"]
+[ext_resource type="PackedScene" uid="uid://6hljg85byo5w" path="res://src/world/fire.tscn" id="5_dk3r8"]
+[ext_resource type="Texture2D" uid="uid://fnhiyr0548si" path="res://jam_assets/GWJ-Full-Logo-noBG.svg" id="6_dk3r8"]
+[ext_resource type="Texture2D" uid="uid://c1bf3h7u28s17" path="res://jam_assets/stardust.png" id="7_pa27v"]
+[ext_resource type="PackedScene" uid="uid://mkb8u73fcue3" path="res://src/world/extinguishers/cloud.tscn" id="9_pa27v"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_n5syy")
@@ -16,6 +21,24 @@ offset_bottom = 40.0
 mouse_filter = 2
 texture = ExtResource("1_1yg6l")
 stretch_mode = 1
+
+[node name="83-consume" type="Sprite2D" parent="Dirt"]
+position = Vector2(1420, 796)
+rotation = -0.173892
+scale = Vector2(0.255844, 0.255844)
+texture = ExtResource("4_0cv6u")
+
+[node name="Fire" parent="Dirt" instance=ExtResource("5_dk3r8")]
+position = Vector2(931, 635)
+
+[node name="Fire2" parent="Dirt" instance=ExtResource("5_dk3r8")]
+position = Vector2(972, 631)
+
+[node name="Fire3" parent="Dirt" instance=ExtResource("5_dk3r8")]
+position = Vector2(953, 660)
+
+[node name="Fire4" parent="Dirt" instance=ExtResource("5_dk3r8")]
+position = Vector2(950, 586)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Dirt"]
 layout_mode = 1
@@ -30,7 +53,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 64
+theme_override_constants/separation = 32
 
 [node name="Label" type="Label" parent="Dirt/VBoxContainer"]
 layout_mode = 2
@@ -45,4 +68,26 @@ size_flags_horizontal = 4
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("2_n5syy")
 
+[node name="Gwj-full-logo-noBg" type="Sprite2D" parent="."]
+position = Vector2(1444.9, 236.747)
+rotation = 0.194327
+scale = Vector2(0.492786, 0.492786)
+texture = ExtResource("6_dk3r8")
+
+[node name="Stardust" type="Sprite2D" parent="."]
+position = Vector2(414, 583)
+rotation = -0.228255
+scale = Vector2(0.487209, 0.487209)
+texture = ExtResource("7_pa27v")
+
+[node name="Cloud" parent="." instance=ExtResource("9_pa27v")]
+position = Vector2(432, 422)
+
+[node name="DraggableComponent" parent="Cloud" index="0"]
+visible = false
+monitoring = false
+monitorable = false
+
 [connection signal="pressed" from="Dirt/VBoxContainer/Start" to="." method="_on_start_pressed"]
+
+[editable path="Cloud"]

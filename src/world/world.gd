@@ -12,13 +12,14 @@ var _started: bool = false
 
 
 func _ready() -> void:
+	seed(123)
 	SignalBus.lit_count_changed.connect(_on_lit_count_changed)
 	calculate_life()
 	win_life_progress.value = win_life
 
 
 func _on_lit_count_changed(new: int) -> void:
-	if _started and new == 0:
+	if _started and new == 0 and next_level != null:
 		if win_life_progress.value <= life.value:
 			$WinSound.play()
 			await $WinSound.finished
@@ -48,6 +49,7 @@ func reset() -> void:
 	for burnable: BurnableArea in get_tree().get_nodes_in_group("burnable"):
 		burnable.reset()
 	calculate_life()
+	seed(123)
 
 
 func calculate_life() -> void:

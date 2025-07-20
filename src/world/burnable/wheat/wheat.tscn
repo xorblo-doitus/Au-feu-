@@ -19,6 +19,8 @@ position = Vector2(0, -64)
 texture = ExtResource("1_ofuxu")
 
 [node name="BurnableArea" parent="." instance=ExtResource("3_i3d0d")]
+time_between_sparkling = 0.5
+litting_on_receiving_sparkle_chance = 0.2
 
 [node name="Fire" parent="BurnableArea" instance=ExtResource("4_cduam")]
 visible = false

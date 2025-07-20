@@ -4,7 +4,7 @@ extends Area2D
 
 
 @export var lit: bool = false: set = set_lit
-@export var time_between_sparkling: float = 0.2
+@export var time_between_sparkling: float = 1
 @export_range(0, 1) var litting_on_receiving_sparkle_chance: float = 0.5
 @export_range(0.001, 10) var life_time: float = 3
 
@@ -34,6 +34,11 @@ var _life_tween: Tween
 
 
 func sparkle() -> void:
+	if is_zero_approx(burn_progress):
+		# I don't know why it sometimes doesn't stop
+		lit = false
+		return
+	
 	var overlapping_areas := get_overlapping_areas()
 	for area in overlapping_areas:
 		if area is ExtinguisherArea:
@@ -73,8 +78,7 @@ func set_lit(new: bool) -> void:
 		return
 	
 	if lit:
-		sparkle_timer.start()
-		sparkle_timer.wait_time = time_between_sparkling
+		sparkle_timer.start(time_between_sparkling)
 		if _life_timer_started == false:
 			_life_timer_started = true
 			life_timer.start(life_time)
@@ -83,7 +87,7 @@ func set_lit(new: bool) -> void:
 				self,
 				^"burn_progress",
 				1.0,
-				life_timer.time_left
+				life_time
 			).from(0.0)
 		else:
 			life_timer.paused = false
