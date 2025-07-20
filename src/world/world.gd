@@ -20,7 +20,11 @@ func _ready() -> void:
 func _on_lit_count_changed(new: int) -> void:
 	if _started and new == 0:
 		if win_life_progress.value <= life.value:
+			$WinSound.play()
+			await $WinSound.finished
 			get_tree().change_scene_to_packed(next_level)
+		else:
+			$LooseSound.play()
 	calculate_life()
 
 

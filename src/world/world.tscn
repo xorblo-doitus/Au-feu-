@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://ciceafugib0p4"]
+[gd_scene load_steps=13 format=3 uid="uid://ciceafugib0p4"]
 
 [ext_resource type="Script" uid="uid://rvw58vx6nx4d" path="res://src/world/world.gd" id="1_nomqr"]
 [ext_resource type="Texture2D" uid="uid://2t5ft0jpmhcp" path="res://src/world/dirt.png" id="2_6fy3g"]
 [ext_resource type="Texture2D" uid="uid://c6mpwiw03si7l" path="res://src/world/play.svg" id="3_bsf3i"]
 [ext_resource type="Texture2D" uid="uid://ffyefm18sy2p" path="res://src/world/reset.svg" id="4_43c6p"]
+[ext_resource type="AudioStream" uid="uid://belb78s37rscb" path="res://src/assets/sfx/Good2.ogg" id="5_l0av5"]
+[ext_resource type="AudioStream" uid="uid://clgds5cr7trct" path="res://src/assets/sfx/Bad2.ogg" id="6_5kmgb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bsf3i"]
 bg_color = Color(1, 1, 1, 1)
@@ -110,6 +112,12 @@ show_percentage = false
 layout_mode = 2
 shortcut = SubResource("Shortcut_jte2u")
 texture_normal = ExtResource("4_43c6p")
+
+[node name="WinSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_l0av5")
+
+[node name="LooseSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_5kmgb")
 
 [connection signal="pressed" from="UI/Buttons/Start" to="." method="start"]
 [connection signal="pressed" from="UI/Buttons/Reset" to="." method="reset"]

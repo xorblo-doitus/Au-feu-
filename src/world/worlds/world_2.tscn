@@ -23,6 +23,7 @@ _data = {
 point_count = 3
 
 [node name="World1" instance=ExtResource("1_hqip5")]
+win_life = 55.0
 
 [node name="SpawnArea" parent="." index="0" instance=ExtResource("2_smikl")]
 position = Vector2(493, 343)
