@@ -3,12 +3,12 @@ extends Node2D
 
 
 @export var next_level: PackedScene
-@onready var life: ProgressBar = $UI/Buttons/Life
+@onready var life: ProgressBar = $UI/Buttons/WinLife/Life
 @export var win_life: float = 80
 
 var _started: bool = false
 
-@onready var win_life_progress: ProgressBar = $UI/Buttons/Life/WinLife
+@onready var win_life_progress: ProgressBar = $UI/Buttons/WinLife
 
 
 func _ready() -> void:

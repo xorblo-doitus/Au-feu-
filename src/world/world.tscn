@@ -19,6 +19,15 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l0av5"]
+draw_center = false
+border_width_right = 8
+border_color = Color(1, 0, 0, 1)
+expand_margin_top = 16.0
+expand_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l0av5"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_43c6p"]
 bg_color = Color(0, 1, 0, 1)
 border_width_left = 8
@@ -30,15 +39,6 @@ corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bsf3i"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l0av5"]
-draw_center = false
-border_width_right = 8
-border_color = Color(1, 0, 0, 1)
-expand_margin_top = 16.0
-expand_margin_bottom = 16.0
 
 [sub_resource type="InputEventKey" id="InputEventKey_6fy3g"]
 device = -1
@@ -83,34 +83,38 @@ theme_override_constants/separation = 64
 
 [node name="Start" type="TextureButton" parent="UI/Buttons"]
 layout_mode = 2
+focus_mode = 0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_bsf3i")
 
-[node name="Life" type="ProgressBar" parent="UI/Buttons"]
+[node name="WinLife" type="ProgressBar" parent="UI/Buttons"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 34
 theme_override_styles/background = SubResource("StyleBoxFlat_bsf3i")
-theme_override_styles/fill = SubResource("StyleBoxFlat_43c6p")
-value = 50.0
-
-[node name="WinLife" type="ProgressBar" parent="UI/Buttons/Life"]
-custom_minimum_size = Vector2(500, 0)
-layout_mode = 2
-offset_right = 500.0
-offset_bottom = 64.0
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 34
-theme_override_styles/background = SubResource("StyleBoxEmpty_bsf3i")
 theme_override_styles/fill = SubResource("StyleBoxFlat_l0av5")
 value = 80.0
 show_percentage = false
 
+[node name="Life" type="ProgressBar" parent="UI/Buttons/WinLife"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+offset_right = 500.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 34
+theme_override_styles/background = SubResource("StyleBoxEmpty_l0av5")
+theme_override_styles/fill = SubResource("StyleBoxFlat_43c6p")
+value = 50.0
+
 [node name="Reset" type="TextureButton" parent="UI/Buttons"]
 layout_mode = 2
+focus_mode = 0
 mouse_default_cursor_shape = 2
 shortcut = SubResource("Shortcut_jte2u")
 texture_normal = ExtResource("4_43c6p")
