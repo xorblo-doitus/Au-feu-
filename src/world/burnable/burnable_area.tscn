@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dh3hr6tx5yxq0" path="res://src/world/burnable/burnable_area.gd" id="1_2ikiw"]
 
-[node name="BurnableArea" type="Area2D"]
+[node name="BurnableArea" type="Area2D" groups=["burnable"]]
 collision_layer = 16
 collision_mask = 48
 input_pickable = false

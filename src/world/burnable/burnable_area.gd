@@ -39,6 +39,11 @@ func catch_fire() -> void:
 		lit = true
 
 
+static var _lit_count: int = 0:
+	set(new):
+		_lit_count = new
+		SignalBus.lit_count_changed.emit(_lit_count)
+
 func set_lit(new: bool) -> void:
 	if _life_timer_started and _life_tween == null:
 		new = false
@@ -47,6 +52,10 @@ func set_lit(new: bool) -> void:
 		return
 	
 	lit = new
+	if lit:
+		_lit_count += 1
+	else:
+		_lit_count -= 1
 	
 	if not is_node_ready():
 		return
@@ -77,6 +86,20 @@ func set_lit(new: bool) -> void:
 	for child in get_children():
 		if child is CanvasItem:
 			child.visible = lit
+
+
+func reset() -> void:
+	lit = false
+	sparkle_timer.stop()
+	life_timer.stop()
+	_life_timer_started = false
+	_life_tween = null
+	get_parent().burn_progress = 0
+
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_PREDELETE:
+		lit = false
 
 
 func _on_timer_timeout() -> void:

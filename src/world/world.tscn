@@ -1,7 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://ciceafugib0p4"]
+[gd_scene load_steps=5 format=3 uid="uid://ciceafugib0p4"]
 
 [ext_resource type="Script" uid="uid://rvw58vx6nx4d" path="res://src/world/world.gd" id="1_nomqr"]
 [ext_resource type="Texture2D" uid="uid://2t5ft0jpmhcp" path="res://src/world/dirt.png" id="2_6fy3g"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_6fy3g"]
+device = -1
+keycode = 82
+unicode = 114
+
+[sub_resource type="Shortcut" id="Shortcut_jte2u"]
+events = [SubResource("InputEventKey_6fy3g")]
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
@@ -13,3 +21,35 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_6fy3g")
 stretch_mode = 1
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 1080.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Buttons" type="HBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Start" type="Button" parent="UI/Buttons"]
+layout_mode = 2
+text = "Start"
+
+[node name="Reset" type="Button" parent="UI/Buttons"]
+layout_mode = 2
+shortcut = SubResource("Shortcut_jte2u")
+text = "Reset"
+
+[connection signal="pressed" from="UI/Buttons/Start" to="." method="start"]
+[connection signal="pressed" from="UI/Buttons/Reset" to="." method="reset"]
