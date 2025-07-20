@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ciceafugib0p4"]
+[gd_scene load_steps=7 format=3 uid="uid://ciceafugib0p4"]
 
 [ext_resource type="Script" uid="uid://rvw58vx6nx4d" path="res://src/world/world.gd" id="1_nomqr"]
 [ext_resource type="Texture2D" uid="uid://2t5ft0jpmhcp" path="res://src/world/dirt.png" id="2_6fy3g"]
+[ext_resource type="Texture2D" uid="uid://c6mpwiw03si7l" path="res://src/world/play.svg" id="3_bsf3i"]
+[ext_resource type="Texture2D" uid="uid://ffyefm18sy2p" path="res://src/world/reset.svg" id="4_43c6p"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_6fy3g"]
 device = -1
@@ -26,9 +28,9 @@ stretch_mode = 1
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_top = 1080.0
+offset_top = 1023.0
 offset_right = 1920.0
-offset_bottom = 1080.0
+offset_bottom = 1023.0
 
 [node name="Buttons" type="HBoxContainer" parent="UI"]
 layout_mode = 1
@@ -42,15 +44,16 @@ offset_top = -40.0
 offset_right = 20.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_constants/separation = 64
 
-[node name="Start" type="Button" parent="UI/Buttons"]
+[node name="Start" type="TextureButton" parent="UI/Buttons"]
 layout_mode = 2
-text = "Start"
+texture_normal = ExtResource("3_bsf3i")
 
-[node name="Reset" type="Button" parent="UI/Buttons"]
+[node name="Reset" type="TextureButton" parent="UI/Buttons"]
 layout_mode = 2
 shortcut = SubResource("Shortcut_jte2u")
-text = "Reset"
+texture_normal = ExtResource("4_43c6p")
 
 [connection signal="pressed" from="UI/Buttons/Start" to="." method="start"]
 [connection signal="pressed" from="UI/Buttons/Reset" to="." method="reset"]
