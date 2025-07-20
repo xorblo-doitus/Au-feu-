@@ -2,6 +2,8 @@ class_name World
 extends Node2D
 
 
+@export var next_level: PackedScene
+
 var _started: bool = false
 
 
@@ -11,8 +13,8 @@ func _ready() -> void:
 
 
 func _on_lit_count_changed(new: int) -> void:
-	if new == 0:
-		print("end")
+	if _started and new == 0:
+		get_tree().change_scene_to_packed(next_level)
 
 
 func start():
@@ -30,10 +32,10 @@ func start():
 func reset() -> void:
 	if not _started:
 		return
+	_started = false
 	
 	for burnable: BurnableArea in get_tree().get_nodes_in_group("burnable"):
 		burnable.reset()
-	_started = false
 
 
 
